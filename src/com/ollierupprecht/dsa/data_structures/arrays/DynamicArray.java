@@ -1,5 +1,7 @@
 package com.ollierupprecht.dsa.data_structures.arrays;
 
+import com.ollierupprecht.dsa.algorithms.searching.LinearSearch;
+
 public class DynamicArray {
     public int[] array;
     public int size;
@@ -57,6 +59,10 @@ public class DynamicArray {
         System.out.println(out + "}");
     }
 
+    public int search(int target) {
+        return LinearSearch.search(array, numElements, target);
+    }
+
     private void grow() {
         size *= 2;
         int[] temp = new int[size];
@@ -90,6 +96,4 @@ public class DynamicArray {
             array[i] = array[i + space];
         }
     }
-
-
 }
