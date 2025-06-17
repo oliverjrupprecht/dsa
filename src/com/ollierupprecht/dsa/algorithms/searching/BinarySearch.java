@@ -1,8 +1,11 @@
 package com.ollierupprecht.dsa.algorithms.searching;
 
+import com.ollierupprecht.dsa.algorithms.sorting.BubbleSort;
+
 public class BinarySearch {
     // array must be sorted for this method to work
     public static int search(int[] arr, int target) {
+
         int front = 0;
         int end = arr.length;
         int mid;
@@ -18,5 +21,10 @@ public class BinarySearch {
         }
 
         return -1;
+    }
+
+    public static int searchUnsorted(int[] arr, int target) {
+        BubbleSort.sort(arr);
+        return search(arr, target);
     }
 }
