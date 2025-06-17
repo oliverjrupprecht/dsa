@@ -1,19 +1,11 @@
 package com.ollierupprecht.dsa;
 
-import com.ollierupprecht.dsa.data_structures.arrays.DynamicArray;
+import com.ollierupprecht.dsa.algorithms.searching.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[] pArray = {1, 2, 3, 4, 5, 6};
-        DynamicArray array = new DynamicArray(pArray);
+        int[] arr = {1,2,3,4,5,6,7,8,9};
 
-        array.print();
-        System.out.println(array.size);
-
-        array.delete(2);
-        array.print();
-
-        array.insert(2, 69);
-        array.print();
+        System.out.println(BinarySearch.search(arr, 9));
     }
 }
