@@ -11,7 +11,7 @@ public class InsertionSort {
      Worst case time performance is O(n^2), best case is O(n). It performs better than bubble sort in the real world,
      because its more performant on nearly sorted arrays.
      */
-    public static void sort(int[] arr) {
+    public static int[] sort(int[] arr) {
 
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i]; // element to be inserted
@@ -26,5 +26,6 @@ public class InsertionSort {
             // once while loop is broken the key can be inserted
             arr[j + 1] = key;
         }
+        return arr;
     }
 }
