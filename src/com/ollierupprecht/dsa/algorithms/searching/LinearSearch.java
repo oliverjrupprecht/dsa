@@ -1,6 +1,13 @@
 package com.ollierupprecht.dsa.algorithms.searching;
 
 public class LinearSearch {
+    /*
+    This method does not require an array to be sorted to work.
+    The method iterates through the array comparing each element with the target until it hits or comes to the end
+    of the array.
+
+    Best case is O(1), worst case is O(n) and the average is O(n).
+     */
     public static int search(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) return i;

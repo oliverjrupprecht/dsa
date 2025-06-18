@@ -8,6 +8,8 @@ public class BinarySearch {
      Finds the middle index of the array and checks for equality, if equal returns mid. Otherwise,
      it iterates on the left or right partition of the array. If it doesn't return within the while loop
      the target isn't in the array.
+
+     best case is O(1), worst case is O(log n) and the average is O(log n).
      */
     public static int search(int[] arr, int target) {
 
