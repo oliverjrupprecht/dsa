@@ -8,11 +8,9 @@ public class Main {
     public static void main(String[] args) {
         int[] array = ArrayGenerator.generate(5, 10);
 
+        int[] arr = {1,2,3,4};
 
-        BubbleSort.sort(array);
-
-        for (int i : array) System.out.println(i);
-
+        BubbleSort.display(array);
 
     }
 }
