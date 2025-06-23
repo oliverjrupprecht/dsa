@@ -27,28 +27,27 @@ public class BubbleSort {
 
     public static void display(int[] arr) {
         StringBuilder sb = new StringBuilder();
-        System.out.println("{a, b, ..., c} -> array" +
-                "\n[a, b] - > items being compared" +
-                "\n| -> sorted portion of the array");
 
         for (int i = 0; i < arr.length; i++) {
+            if (i < arr.length - 1) sb.append("\n\nIteration ").append(i + 1).append(": ");
             for (int j = 0; j < arr.length - 1 - i; j++) { // subtracting i, stops us from having to sort previously sorted values
                 printHelper(sb, arr, j, arr.length - i);
                 if (arr[j] > arr[j+1]) { // swap elements if out of order
-                    System.out.println(arr[j] + " > " + arr[j + 1] + " therefore SWAP elements...");
+                    sb.append(" -> (").append(arr[j]).append(" > ").append(arr[j + 1]).append("), therefore SWAP elements.");
                     int tmp = arr[j+1];
                     arr[j+1] = arr[j];
                     arr[j] = tmp;
-                } else if (arr[j] == arr[j+1]) System.out.println(arr[j] + " == " + arr[j + 1] + " therefore leave elements...");
-                else System.out.println(arr[j] + " < " + arr[j + 1] + " therefore leave elements...");
+                } else if (arr[j] == arr[j+1]) sb.append(" -> (").append(arr[j]).append(" == ").append(arr[j + 1]).append("), therefore leave elements.");
+                else sb.append(" -> (").append(arr[j]).append(" < ").append(arr[j + 1]).append("), therefore leave elements.");
             }
         }
 
+        sb.append("\n\nSorted array: ");
         printHelper(sb, arr);
+        System.out.println(sb);
     }
 
     private static void printHelper(StringBuilder sb, int[] arr, int j, int k) {
-
         sb.append("\n{");
         for (int i = 0; i < arr.length; i++) {
             if (i > 0) sb.append(", "); // add comma *before* element (except first)
@@ -62,22 +61,14 @@ public class BubbleSort {
             if (i == j + 1) sb.append("]");
         }
         sb.append("}");
-
-        System.out.println(sb);
-        sb.setLength(0); // clear sb object for reuse
-
     }
 
     private static void printHelper(StringBuilder sb, int[] arr) {
-
-        sb.append("\nSorted Array: {");
+        sb.append("{");
         for (int i = 0; i < arr.length; i++) {
             if (i > 0) sb.append(", "); // add comma *before* element (except first)
             sb.append(arr[i]);  // actual value
         }
         sb.append("}");
-
-        System.out.println(sb);
-        sb.setLength(0); // clear sb object for reuse
     }
 }

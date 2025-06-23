@@ -1,5 +1,6 @@
 package com.ollierupprecht.dsa;
 
+import com.ollierupprecht.dsa.algorithms.sorting.BubbleSort;
 import com.ollierupprecht.dsa.algorithms.sorting.InsertionSort;
 import com.ollierupprecht.dsa.algorithms.utils.ArrayGenerator;
 
@@ -8,6 +9,7 @@ public class Main {
         int[] array = ArrayGenerator.generate(12, 20);
 
         InsertionSort.display(array);
+        //BubbleSort.display(array);
 
     }
 }
