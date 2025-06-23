@@ -11,6 +11,7 @@ public class BinarySearch {
 
      best case is O(1), worst case is O(log n) and the average is O(log n).
      */
+
     public static int search(int[] arr, int target) {
 
         int front = 0;
